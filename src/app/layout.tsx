@@ -1,11 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Link from 'next/link'
+import { Package2Icon } from '@/assets/icons'
+import Navigation from '@/components/Navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Dashboard | [Client name]',
+  title: 'Dashboard',
 }
 
 export default function RootLayout({
@@ -17,6 +20,20 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <div className='grid min-h-screen w-full lg:grid-cols-[280px_1fr]'>
+          <div className='hidden border-r border-slate-600 bg-gray-100/40 lg:block dark:bg-gray-800/40'>
+            <div className='flex h-full max-h-screen flex-col gap-2'>
+              <div className='flex h-[60px] items-center border-b border-slate-600 px-6'>
+                <Link
+                  className='flex items-center gap-2 font-semibold'
+                  href='#'
+                >
+                  <Package2Icon className='h-6 w-6' />
+                  <span className=''>Store</span>
+                </Link>
+              </div>
+              <Navigation />
+            </div>
+          </div>
           {children}
         </div>
       </body>
