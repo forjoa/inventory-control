@@ -25,7 +25,7 @@ export default function RootLayout({
               <div className='flex h-[60px] items-center border-b border-slate-600 px-6'>
                 <Link
                   className='flex items-center gap-2 font-semibold'
-                  href='#'
+                  href='/'
                 >
                   <Package2Icon className='h-6 w-6' />
                   <span className=''>Store</span>
