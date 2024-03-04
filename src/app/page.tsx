@@ -95,7 +95,7 @@ export default function Component() {
             <h1 className='font-semibold text-lg md:text-2xl'>Inventory</h1>
             <button className='ml-auto'>Add product</button>
           </div>
-          <div className='border shadow-sm rounded-lg'>
+          <div className='border rounded-lg'>
             <table>
               <thead>
                 <tr>
