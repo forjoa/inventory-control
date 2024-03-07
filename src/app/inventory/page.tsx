@@ -41,7 +41,7 @@ export default function Component() {
         </button>
       </div>
       <table className='w-auto'>
-        <thead className='border border-slate-600 rounded-t'>
+        <thead className='border border-slate-800 rounded-t'>
           <tr>
             <th className='p-3'>Name</th>
             <th className='hidden md:table-cell p-3'>Status</th>
@@ -49,7 +49,7 @@ export default function Component() {
             <th className='hidden md:table-cell p-3'>Company</th>
           </tr>
         </thead>
-        <tbody className='border border-slate-600 rounded-b'>
+        <tbody className='border border-slate-800 rounded-b'>
           {products.map((value, index) => {
             return (
               <tr key={index}>
