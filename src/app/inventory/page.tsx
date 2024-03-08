@@ -57,7 +57,7 @@ export default function Component() {
                   <td className='p-3 border-r border-slate-800'><p className="block m-auto w-fit">{value.stock}</p></td>
                   <td className='hidden md:table-cell p-3 border-r border-slate-800'>{value.company}</td>
                   <td className='p-3 flex justify-center'>
-                    <button className='bg-blue-600 py-2 px-6 rounded'>
+                    <button className='bg-blue-600 py-2 px-6 rounded transition-all hover:bg-blue-500'>
                       Edit
                     </button>
                   </td>
