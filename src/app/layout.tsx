@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
+  title: 'Dashboard | Store',
 }
 
 export default function RootLayout({
