@@ -38,12 +38,6 @@ export default async function Component() {
               <th className='hidden md:table-cell p-3 border-r border-slate-800'>
                 CREATED AT
               </th>
-              <th className='hidden md:table-cell p-3 border-r border-slate-800'>
-                CATEGORY
-              </th>
-              <th className='hidden md:table-cell p-3 border-r border-slate-800'>
-                SUBCATEGORY
-              </th>
               <th className='p-3'>ACTIONS</th>
             </tr>
           </thead>
@@ -76,12 +70,6 @@ export default async function Component() {
                 </td>
                 <td className='hidden md:table-cell p-3 border-r border-slate-800'>
                   {formatDate(product.created_at)}
-                </td>
-                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                  {product.category_id}
-                </td>
-                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                  {product.discount_id}
                 </td>
                 <td className='py-1 flex justify-center gap-3'>
                   <button className='bg-blue-600 py-2 px-6 rounded transition-all hover:bg-blue-500'>
