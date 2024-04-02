@@ -60,7 +60,7 @@ export default function Component() {
                     <button className='bg-blue-600 py-2 px-6 rounded transition-all hover:bg-blue-500'>
                       Edit
                     </button>
-                    <button className="bg-red-600 py-2 px-6 rounded transition-all hover:bg-blue-500">
+                    <button className="bg-red-600 py-2 px-6 rounded transition-all hover:bg-red-500">
                       Delete
                     </button>
                   </td>
