@@ -51,19 +51,19 @@ export default async function Component() {
                   {product.description}
                 </td>
                 <td className='p-3 border-r border-slate-800'>
-                  {product.price}
+                  {`${product.price} $`}
                 </td>
                 <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                  {product.cost}
+                  {`${product.cost} $`}
                 </td>
                 <td className='hidden md:table-cell p-3 border-r border-slate-800'>
                   {product.size}
                 </td>
                 <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                  {product.weight}
+                  {`${product.weight} kg`}
                 </td>
                 <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                  {product.stock}
+                  {`${product.stock} u`}
                 </td>
                 <td className='hidden md:table-cell p-3 border-r border-slate-800'>
                   {product.bar_code}
