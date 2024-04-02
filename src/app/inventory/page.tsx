@@ -1,10 +1,12 @@
+import DeleteButton from '@/components/DeleteButton'
+import EditButton from '@/components/EditButton'
 import { supabase } from '@/database/database_connection'
 import { Product } from '@/types/types'
 import { formatDate } from '@/utils/functions'
 
 export default async function Component() {
-  const { data } = await supabase.from('products').select()
-  const products: Product[] = data ?? []
+  let { data } = await supabase.from('products').select('*')
+  let products: Product[] = data as Product[]
 
   return (
     <main className='flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6'>
@@ -72,12 +74,8 @@ export default async function Component() {
                   {formatDate(product.created_at)}
                 </td>
                 <td className='py-1 flex justify-center gap-3'>
-                  <button className='bg-blue-600 py-2 px-6 rounded transition-all hover:bg-blue-500'>
-                    Edit
-                  </button>
-                  <button className='bg-red-600 py-2 px-6 rounded transition-all hover:bg-red-500'>
-                    Delete
-                  </button>
+                  <EditButton product={product} />
+                  <DeleteButton product_id={product.product_id} />
                 </td>
               </tr>
             ))}
