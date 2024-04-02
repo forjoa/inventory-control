@@ -1,9 +1,11 @@
-import { supabase } from "@/database/database_connection"
-import { Product } from "@/types/types";
+import { supabase } from '@/database/database_connection'
+import { Product } from '@/types/types'
+import { formatDate } from '@/utils/functions'
 
-export default function Component() {
-  const products = supabase.from('products').select();
-   
+export default async function Component() {
+  const { data } = await supabase.from('products').select()
+  const products: Product[] = data ?? []
+
   return (
     <main className='flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6'>
       <div className='flex items-center'>
@@ -46,32 +48,51 @@ export default function Component() {
             </tr>
           </thead>
           <tbody className=''>
-            {/* {products.map((value, index) => {
-              return (
-                <tr key={index} className='border-t border-slate-800'>
-                  <td className='font-medium p-3 border-r border-slate-800'>
-                    {value.name}
-                  </td>
-                  <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                    {value.status}
-                  </td>
-                  <td className='p-3 border-r border-slate-800'>
-                    <p className='block m-auto w-fit'>{value.stock}</p>
-                  </td>
-                  <td className='hidden md:table-cell p-3 border-r border-slate-800'>
-                    {value.company}
-                  </td>
-                  <td className='py-1 flex justify-center gap-3'>
-                    <button className='bg-blue-600 py-2 px-6 rounded transition-all hover:bg-blue-500'>
-                      Edit
-                    </button>
-                    <button className='bg-red-600 py-2 px-6 rounded transition-all hover:bg-red-500'>
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              )
-            })} */}
+            {products.map((product, index) => (
+              <tr key={index} className='border-t border-slate-800'>
+                <td className='font-medium p-3 border-r border-slate-800'>
+                  {product.name}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.description}
+                </td>
+                <td className='p-3 border-r border-slate-800'>
+                  {product.price}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.cost}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.size}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.weight}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.stock}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.bar_code}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {formatDate(product.created_at)}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.category_id}
+                </td>
+                <td className='hidden md:table-cell p-3 border-r border-slate-800'>
+                  {product.discount_id}
+                </td>
+                <td className='py-1 flex justify-center gap-3'>
+                  <button className='bg-blue-600 py-2 px-6 rounded transition-all hover:bg-blue-500'>
+                    Edit
+                  </button>
+                  <button className='bg-red-600 py-2 px-6 rounded transition-all hover:bg-red-500'>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
