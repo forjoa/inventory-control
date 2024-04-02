@@ -1,37 +1,9 @@
-export default function Component() {
-  const products = [
-    {
-      name: 'Glimmer Lamps',
-      status: 'In Production',
-      stock: '500',
-      company: 'Luminance Creations',
-    },
-    {
-      name: 'Aqua Filters',
-      status: 'Available for Order',
-      stock: '750',
-      company: 'HydraClean Solutions',
-    },
-    {
-      name: 'Eco Planters',
-      status: 'Backordered',
-      stock: '300',
-      company: 'GreenGrowth Designers',
-    },
-    {
-      name: 'Zest Juicers',
-      status: 'Newly Launched',
-      stock: '1000',
-      company: 'FreshTech Appliances',
-    },
-    {
-      name: 'Flexi Wearables',
-      status: 'Selling Fast',
-      stock: '200',
-      company: 'Vitality Gear Co.',
-    },
-  ]
+import { supabase } from "@/database/database_connection"
+import { Product } from "@/types/types";
 
+export default function Component() {
+  const products = supabase.from('products').select();
+   
   return (
     <main className='flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6'>
       <div className='flex items-center'>
@@ -74,7 +46,7 @@ export default function Component() {
             </tr>
           </thead>
           <tbody className=''>
-            {products.map((value, index) => {
+            {/* {products.map((value, index) => {
               return (
                 <tr key={index} className='border-t border-slate-800'>
                   <td className='font-medium p-3 border-r border-slate-800'>
@@ -99,7 +71,7 @@ export default function Component() {
                   </td>
                 </tr>
               )
-            })}
+            })} */}
           </tbody>
         </table>
       </div>
