@@ -3,7 +3,7 @@ import { Product } from "@/types/types"
 const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose: any }) => {
     return (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-            <div className='border border-slate-800 w-1/4 bg-gray-100 lg:block dark:bg-gray-900 ml-5 my-5 rounded-lg'>
+            <div className='border border-slate-800 w-1/4 bg-gray-100 lg:block dark:bg-gray-900 rounded-lg'>
                 <button className='absolute top-0 right-0 p-2'>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
