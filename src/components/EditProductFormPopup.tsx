@@ -25,34 +25,34 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
                     <p className="text-lg font-bold">Form to edit a product:</p><br />
                     <form className="w-full flex flex-col gap-1">
                         <label htmlFor="name">Name:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="text" id="name" name="name" value={product.name} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="name" name="name" value={product.name} />
 
                         <label htmlFor="description">Description:</label>
-                        <textarea className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" id="description" name="description" value={product.description}></textarea>
+                        <textarea className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" id="description" name="description" value={product.description}></textarea>
 
                         <label htmlFor="price">Price:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="number" id="price" name="price" value={product.price} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="price" name="price" value={product.price} />
 
                         <label htmlFor="cost">Cost:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="number" id="cost" name="cost" value={product.cost} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p- outline-none" spellCheck="false" type="number" id="cost" name="cost" value={product.cost} />
 
                         <label htmlFor="size">Size:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="text" id="size" name="size" value={product.size} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="size" name="size" value={product.size} />
 
                         <label htmlFor="weight">Weight:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="number" id="weight" name="weight" value={product.weight} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="weight" name="weight" value={product.weight} />
 
                         <label htmlFor="stock">Stock:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="number" id="stock" name="stock" value={product.stock} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="stock" name="stock" value={product.stock} />
 
                         <label htmlFor="bar_code">Bar Code:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="text" id="bar_code" name="bar_code" value={product.bar_code} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="bar_code" name="bar_code" value={product.bar_code} />
 
                         <label htmlFor="category_id">Category ID:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="number" id="category_id" name="category_id" value={product.category_id} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="category_id" name="category_id" value={product.category_id} />
 
                         <label htmlFor="discount_id">Discount ID:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2" type="number" id="discount_id" name="discount_id" value={product.discount_id} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="discount_id" name="discount_id" value={product.discount_id} />
 
                         <br />
 
