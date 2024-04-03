@@ -34,7 +34,7 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
                         <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="price" name="price" value={product.price} />
 
                         <label htmlFor="cost">Cost:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p- outline-none" spellCheck="false" type="number" id="cost" name="cost" value={product.cost} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="number" id="cost" name="cost" value={product.cost} />
 
                         <label htmlFor="size">Size:</label>
                         <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="size" name="size" value={product.size} />
