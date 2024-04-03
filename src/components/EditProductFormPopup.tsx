@@ -22,7 +22,7 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
                     </svg>
                 </button>
                 <div className="p-8 w-full">
-                    <p className="text-lg font-bold">Form to edit a product:</p><br />
+                    <p className="text-xl font-bold">Form to edit a product:</p><br />
                     <form className="w-full flex flex-col gap-1">
                         <label htmlFor="name">Name:</label>
                         <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="name" name="name" value={product.name} />
