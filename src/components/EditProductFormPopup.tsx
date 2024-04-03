@@ -4,10 +4,10 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
     return (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
             <div className='border border-slate-800 w-1/4 bg-gray-100 lg:block dark:bg-gray-900 rounded-lg'>
-                <button className='absolute top-0 right-0 p-2'>
+                <button className='w-full flex pt-6 pb-2 px-8'>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
-                        className='h-6 w-6'
+                        className='h-6 w-6 ml-auto self-center'
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke='currentColor'
@@ -21,8 +21,8 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
                         />
                     </svg>
                 </button>
-                <div className="p-8 w-full">
-                    <p className="text-xl font-bold">Form to edit a product:</p><br />
+                <div className="px-8 pb-8 w-full">
+                    <p className="text-xl font-bold">Form to edit a product</p><br />
                     <form className="w-full flex flex-col gap-1">
                         <label htmlFor="name">Name:</label>
                         <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="name" name="name" value={product.name} />
