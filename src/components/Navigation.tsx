@@ -38,17 +38,6 @@ export default function Navigation() {
         </Link>
         <Link
           className={`${
-            router == '/products'
-              ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50'
-              : 'text-gray-500 dark:text-gray-400'
-          } flex items-center gap-3 rounded-lg px-3 py-2 transition-all dark:hover:text-gray-50`}
-          href='/products'
-        >
-          <PackageIcon className='h-4 w-4' />
-          Products
-        </Link>
-        <Link
-          className={`${
             router == '/costumers'
               ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50'
               : 'text-gray-500 dark:text-gray-400'
