@@ -30,7 +30,6 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         insertNewProduct(formData)
-        console.log(formData)
         onClose()
     }
 

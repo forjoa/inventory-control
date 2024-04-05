@@ -23,7 +23,4 @@ export async function insertNewProduct(product: Product) {
     category_id: product.category_id,
     discount_id: product.discount_id,
   })
-
-  console.log(data)
-  console.log(error)
 }
