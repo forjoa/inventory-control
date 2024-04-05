@@ -1,5 +1,6 @@
 'use client'
 import { Product } from "@/types/types"
+import { insertNewProduct } from "@/utils/functions"
 import { useState } from "react"
 
 export default function AddNewProductPopup({ onClose }: { onClose: any }) {
@@ -28,6 +29,7 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        insertNewProduct(formData)
         console.log(formData)
         onClose()
     }
