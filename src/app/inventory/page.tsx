@@ -6,8 +6,8 @@ import { Product } from '@/types/types'
 import { formatDate } from '@/utils/functions'
 
 export default async function Component() {
-  let { data } = await supabase.from('products').select('*')
-  let products: Product[] = data as Product[]
+  const { data } = await supabase.from('products').select('*')
+  const products: Product[] = data as Product[]
 
   return (
     <main className='flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6'>
