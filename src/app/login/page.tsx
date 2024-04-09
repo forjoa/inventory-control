@@ -11,14 +11,13 @@ const LoginPage = () => {
   const handleLogin = async (e: any) => {
     e.preventDefault()
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
       if (error) {
         throw error
       }
-      console.log('User logged in:', data)
       router.push('/')
     } catch (error) {
       console.error('Login error')
