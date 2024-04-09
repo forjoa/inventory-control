@@ -24,3 +24,7 @@ export async function insertNewProduct(product: Product) {
     discount_id: product.discount_id,
   })
 }
+
+export async function insertNewCategory(category: string) {
+  const { data, error } = await supabase.from('categories').insert({ name: category})
+}
