@@ -8,6 +8,7 @@ import {
   UsersIcon,
 } from '@/assets/icons'
 import { usePathname } from 'next/navigation'
+import { signOut } from '@/utils/functions'
 
 export default function Navigation() {
   const router = usePathname()
@@ -60,7 +61,7 @@ export default function Navigation() {
           Inventory
         </Link>
       </nav>
-      <button className='flex gap-1 mx-4 px-2 py-2 border border-red-800 rounded bg-red-800 bg-opacity-50'>
+      <button className='flex gap-1 mx-4 px-2 py-2 border border-red-800 rounded bg-red-800 bg-opacity-50  text-red-500' onClick={signOut}>
         <Logout className='h-4 w-4' />
         <p>Log out</p>
       </button>
