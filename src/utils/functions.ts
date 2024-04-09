@@ -38,3 +38,7 @@ export async function insertNewDiscount(discount: Discount) {
     end_date: discount.end_date,
   })
 }
+
+export async function signOut() {
+  const { error } = await supabase.auth.signOut()
+}
