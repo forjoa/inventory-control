@@ -1,4 +1,5 @@
 import AddCategoryButton from '@/components/AddCategoryButton'
+import AddDiscountButton from '@/components/AddDiscountButton'
 import AddProductButton from '@/components/AddProductButton'
 import DeleteButton from '@/components/DeleteButton'
 import EditButton from '@/components/EditButton'
@@ -17,6 +18,7 @@ export default async function Component() {
         <div className='flex gap-2'>
           <AddProductButton />
           <AddCategoryButton />
+          <AddDiscountButton />
         </div>
       </div>
       <div className='border border-slate-800 rounded-lg'>

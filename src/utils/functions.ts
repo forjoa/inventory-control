@@ -1,5 +1,5 @@
 import { supabase } from '@/database/database_connection'
-import { Product } from '@/types/types'
+import { Discount, Product } from '@/types/types'
 
 export function formatDate(dateString: string): string {
   const date = new Date(dateString)
@@ -26,5 +26,15 @@ export async function insertNewProduct(product: Product) {
 }
 
 export async function insertNewCategory(category: string) {
-  const { data, error } = await supabase.from('categories').insert({ name: category})
+  const { data, error } = await supabase
+    .from('categories')
+    .insert({ name: category })
+}
+
+export async function insertNewDiscount(discount: Discount) {
+  const { data, error } = await supabase.from('discounts').insert({
+    discount_percentage: discount.percentage,
+    start_date: discount.start_date,
+    end_date: discount.end_date,
+  })
 }

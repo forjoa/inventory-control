@@ -12,3 +12,9 @@ export interface Product {
     category_id : number,
     discount_id : number
 }
+
+export interface Discount {
+    percentage: number,
+    start_date: string,
+    end_date: string
+}
