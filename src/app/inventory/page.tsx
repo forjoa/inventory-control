@@ -6,7 +6,7 @@ import { Product } from '@/types/types'
 import { formatDate } from '@/utils/functions'
 
 export default async function Component() {
-  const { data } = await supabase.from('products').select()
+  const { data } = await supabase.from('products').select('name, description, price, cost, size, weight, stock, bar_code, created_at, discount_id, category_id')
   const products: Product[] = data as Product[]
 
   return (
