@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import {
   HomeIcon,
+  Logout,
   PackageIcon,
   ShoppingCartIcon,
   UsersIcon,
@@ -12,7 +13,7 @@ export default function Navigation() {
   const router = usePathname()
 
   return (
-    <div className='flex-1 overflow-auto py-2'>
+    <div className='flex flex-col h-full overflow-auto py-2 justify-between'>
       <nav className='grid items-start px-4 text-sm font-medium'>
         <Link
           className={`${
@@ -59,6 +60,10 @@ export default function Navigation() {
           Inventory
         </Link>
       </nav>
+      <button className='flex gap-1 mx-4 px-2 py-2 border border-red-800 rounded bg-red-800 bg-opacity-50'>
+        <Logout className='h-4 w-4' />
+        <p>Log out</p>
+      </button>
     </div>
   )
 }
