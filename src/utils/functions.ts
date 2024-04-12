@@ -54,7 +54,7 @@ export async function updateProduct(product: Product) {
       category_id: product.category_id,
       discount_id: product.discount_id,
     })
-    .eq('id', product.product_id)
+    .eq('product_id', product.product_id)
 }
 
 export async function signOut() {
