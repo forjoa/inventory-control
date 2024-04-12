@@ -40,18 +40,21 @@ export async function insertNewDiscount(discount: Discount) {
 }
 
 export async function updateProduct(product: Product) {
-  const { data, error } = await supabase.from('products').update({
-    name: product.name,
-    description: product.description,
-    price: product.price,
-    cost: product.cost,
-    size: product.size,
-    weight: product.weight,
-    stock: product.stock,
-    bar_code: product.bar_code,
-    category_id: product.category_id,
-    discount_id: product.discount_id,
-  })
+  const { data, error } = await supabase
+    .from('products')
+    .update({
+      name: product.name,
+      description: product.description,
+      price: product.price,
+      cost: product.cost,
+      size: product.size,
+      weight: product.weight,
+      stock: product.stock,
+      bar_code: product.bar_code,
+      category_id: product.category_id,
+      discount_id: product.discount_id,
+    })
+    .eq('id', product.product_id)
 }
 
 export async function signOut() {
