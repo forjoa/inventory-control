@@ -18,3 +18,9 @@ export interface Discount {
     start_date: string,
     end_date: string
 }
+
+export interface Category {
+    category_id : number,
+    name : string,
+    created_at : string
+}
