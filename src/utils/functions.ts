@@ -39,6 +39,10 @@ export async function insertNewDiscount(discount: Discount) {
   })
 }
 
+export async function updateProduct(product:Product) {
+ 
+}
+
 export async function signOut() {
   const { error } = await supabase.auth.signOut()
   window.location.reload()
