@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Product } from "@/types/types"
+import { updateProduct } from '@/utils/functions'
 
 const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose: any }) => {
     const [formData, setFormData] = useState<Product>({
@@ -27,7 +28,7 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        console.log(formData)
+        updateProduct(formData)
         onClose() 
     }
 
