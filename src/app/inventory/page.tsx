@@ -87,7 +87,7 @@ export default async function Component() {
                   <td className='hidden lg:table-cell p-3 border-r border-slate-800'>
                     {formatDate(product.created_at)}
                   </td>
-                  <td className='py-1 flex justify-center gap-3'>
+                  <td className='h-full p-3 flex justify-center items-center gap-3'>
                     <EditButton product={product} />
                     <DeleteButton product_id={product.product_id} />
                   </td>
