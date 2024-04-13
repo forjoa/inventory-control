@@ -14,7 +14,7 @@ export interface Product {
 }
 
 export interface Discount {
-    discount_id: number,
+    discount_id?: number,
     discount_percentage: number,
     start_date: string,
     end_date: string
