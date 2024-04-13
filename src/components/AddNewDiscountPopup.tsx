@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export default function AddNewDiscountPopup({ onClose }: { onClose: any }) {
     const [formData, setFormData] = useState<Discount>({
-        percentage: 0,
+        discount_percentage: 0,
         start_date: '',
         end_date: ''
     })
@@ -48,7 +48,7 @@ export default function AddNewDiscountPopup({ onClose }: { onClose: any }) {
                     <p className="text-xl font-bold">Form to add a new discount</p><br />
                     <form className="w-full flex flex-col gap-1" onSubmit={handleSubmit}>
                         <label htmlFor="percentage">Percentage:</label>
-                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="percentage" name="percentage" value={formData.percentage} onChange={handleChange} />
+                        <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="text" id="percentage" name="percentage" value={formData.discount_percentage} onChange={handleChange} />
 
                         <label htmlFor="start_date">Start Date:</label>
                         <input className="bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none" spellCheck="false" type="date" name="start_date" id="start_date" value={formData.start_date} onChange={handleChange}/>
