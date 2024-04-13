@@ -1,11 +1,12 @@
 'use client'
 import { supabase } from '@/database/database_connection'
-import { Category, Product } from '@/types/types'
-import { insertNewProduct } from '@/utils/functions'
+import { Category, Discount, Product } from '@/types/types'
+import { formatDate, insertNewProduct } from '@/utils/functions'
 import { useEffect, useState } from 'react'
 
 export default function AddNewProductPopup({ onClose }: { onClose: any }) {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [discounts, setDiscounts] = useState<Discount[]>([])
   const [formData, setFormData] = useState<Product>({
     product_id: 0,
     name: '',
@@ -37,17 +38,28 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
 
   useEffect(() => {
     fetchCategories()
+    fetchDiscounts() 
   }, [])
 
   const fetchCategories = async () => {
     try {
-      const response = await supabase.from('categories').select();
-      const categoriesData: Category[] = response.data || [];
-      setCategories(categoriesData);
+      const response = await supabase.from('categories').select()
+      const categoriesData: Category[] = response.data || []
+      setCategories(categoriesData)
     } catch (error : any) {
-      console.error('Error fetching categories:', error.message);
+      console.error('Error fetching categories:', error.message)
     }
-  }    
+  }
+  
+  const fetchDiscounts = async () => {
+    try {
+      const response = await supabase.from('discounts').select()
+      const discountsData: Discount[] = response.data || []
+      setDiscounts(discountsData)
+    } catch (error : any) {
+      console.error('Error fetching discounts: ', error.message)
+    }
+  }
 
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
@@ -171,16 +183,16 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
               })}
             </select>
 
-            <label htmlFor='discount_id'>Discount ID:</label>
-            <input
-              className='bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none'
-              spellCheck='false'
-              type='number'
-              id='discount_id'
-              name='discount_id'
-              value={formData.discount_id}
-              onChange={handleChange}
-            />
+            <label htmlFor='discount_id'>Select a discount:</label>
+            <select name='discount_id' id='discount_id' className='bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none' onChange={handleChange}>
+              {discounts.map((discount, index) => {
+                return (
+                  <option value={discount.discount_id} key={index}>
+                    {discount.discount_percentage} % (from {formatDate(discount.start_date)} to {formatDate(discount.end_date)})
+                  </option>
+                )
+              })}
+            </select>
 
             <br />
 
