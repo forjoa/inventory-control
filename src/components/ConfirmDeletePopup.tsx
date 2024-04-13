@@ -38,7 +38,7 @@ export default function ConfirmDeletePopup({
               Cancel
             </button>
             <button
-              className='py-2 w-full border dark:border-red-800 rounded dark:bg-red-800 dark:bg-opacity-50 bg-red-500 text-white dark:text-gray-800'
+              className='py-2 w-full border dark:border-red-800 rounded dark:bg-red-800 dark:bg-opacity-50 bg-red-500 text-white dark:text-red-500'
               onClick={() => deleteProduct(product_id, onClose)}
             >
               Delete
