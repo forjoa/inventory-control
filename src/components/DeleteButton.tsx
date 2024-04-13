@@ -12,7 +12,7 @@ export default function DeleteButton({ product_id }: { product_id: number }) {
   return (
     <>
       <button
-        className='bg-red-600 py-2 px-6 rounded transition-all hover:bg-red-500 text-white dark:text-gray-800'
+        className='bg-red-600 py-2 px-6 rounded transition-all hover:bg-red-500 text-white'
         onClick={togglePopup}
       >
         Delete
