@@ -33,7 +33,7 @@ export async function insertNewCategory(category: string) {
 
 export async function insertNewDiscount(discount: Discount) {
   const { data, error } = await supabase.from('discounts').insert({
-    discount_percentage: discount.percentage,
+    discount_percentage: discount.discount_percentage,
     start_date: discount.start_date,
     end_date: discount.end_date,
   })
