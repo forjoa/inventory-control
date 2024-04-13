@@ -58,7 +58,7 @@ export default function AddNewDiscountPopup({ onClose }: { onClose: any }) {
 
                         <br />
 
-                        <input type="submit" value="Submit" className="bg-blue-500 rounded py-2 px-4 cursor-pointer" />
+                        <input type="submit" value="Submit" className="bg-blue-500 rounded py-2 px-4 cursor-pointer text-white dark:text-dark-800" />
                     </form>
 
                 </div>
