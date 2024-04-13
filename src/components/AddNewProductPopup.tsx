@@ -2,9 +2,11 @@
 import { supabase } from '@/database/database_connection'
 import { Category, Product } from '@/types/types'
 import { insertNewProduct } from '@/utils/functions'
+import { useEffect, useState } from 'react'
 
 export default function AddNewProductPopup({ onClose }: { onClose: any }) {
-  const formData: Product = {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [formData, setFormData] = useState<Product>({
     product_id: 0,
     name: '',
     description: '',
@@ -17,13 +19,14 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
     created_at: '',
     category_id: 0,
     discount_id: 0,
-  }
+  })
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = ( e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement> ) => {
     const { name, value } = e.target
-    formData[name] = value
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }))
   }
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,17 +34,20 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
     insertNewProduct(formData)
     onClose()
   }
-  let categories : Category[] = []
-  supabase
-    .from('categories')
-    .select()
-    .then((value) => {
-      let temp: Category[] = value.data as Category[]
-      console.log(temp)
-      categories = temp
-    })
-    console.log(categories);
-    
+
+  useEffect(() => {
+    fetchCategories()
+  }, [])
+
+  const fetchCategories = async () => {
+    try {
+      const response = await supabase.from('categories').select();
+      const categoriesData: Category[] = response.data || [];
+      setCategories(categoriesData);
+    } catch (error : any) {
+      console.error('Error fetching categories:', error.message);
+    }
+  }    
 
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
@@ -154,8 +160,8 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
               onChange={handleChange}
             />
 
-            <label htmlFor='category_id'>Category ID:</label>
-            <select name='' id=''>
+            <label htmlFor='category_id'>Select a category:</label>
+            <select name='category_id' id='category_id' className='bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none' onChange={handleChange}>
               {categories.map((category, index) => {
                 return (
                   <option value={category.category_id} key={index}>
@@ -164,15 +170,6 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
                 )
               })}
             </select>
-            <input
-              className='bg-gray-100/40 dark:bg-gray-800/40 rounded p-2 outline-none'
-              spellCheck='false'
-              type='number'
-              id='category_id'
-              name='category_id'
-              value={formData.category_id}
-              onChange={handleChange}
-            />
 
             <label htmlFor='discount_id'>Discount ID:</label>
             <input
