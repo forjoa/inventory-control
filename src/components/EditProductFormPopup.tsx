@@ -62,7 +62,7 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
 
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-      <div className='border border-slate-800 w-3/4 md:w-1/4 bg-gray-100 lg:block dark:bg-gray-900 rounded-lg'>
+      <div className='border border-slate-800 w-3/4 md:w-1/4 bg-gray-300 lg:block dark:bg-gray-900 rounded-lg'>
         <button className='w-full flex pt-6 pb-2 px-8'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -210,7 +210,7 @@ const EditProductFormPopup = ({ product, onClose }: { product: Product, onClose:
             <input
               type='submit'
               value='Submit'
-              className='bg-blue-500 rounded py-2 px-4 cursor-pointer'
+              className='bg-blue-500 text-white dark:text-dark-800 rounded py-2 px-4 cursor-pointer'
             />
           </form>
         </div>
