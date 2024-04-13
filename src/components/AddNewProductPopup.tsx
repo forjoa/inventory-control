@@ -199,7 +199,7 @@ export default function AddNewProductPopup({ onClose }: { onClose: any }) {
             <input
               type='submit'
               value='Submit'
-              className='bg-blue-500 rounded py-2 px-4 cursor-pointer'
+              className='bg-blue-500 rounded py-2 px-4 cursor-pointer text-white dark:text-dark-800'
             />
           </form>
         </div>
