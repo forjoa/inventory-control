@@ -26,7 +26,7 @@ export default function AddNewDiscountPopup({ onClose }: { onClose: any }) {
 
     return (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-            <div className='border border-slate-800 w-3/4 md:w-1/4 bg-gray-100 lg:block dark:bg-gray-900 rounded-lg'>
+            <div className='border border-slate-800 w-3/4 md:w-1/4 bg-gray-300 lg:block dark:bg-gray-900 rounded-lg'>
                 <button className='w-full flex pt-6 pb-2 px-8'>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
