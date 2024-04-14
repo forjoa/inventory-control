@@ -15,7 +15,7 @@ export default function AddDiscountButton() {
             <button className='flex gap-2 py-2 px-4 border border-slate-800 bg-gray-100/40 dark:bg-gray-800/40 rounded-lg' onClick={togglePopup}>
                 <Add />
                 <p className="hidden md:block">
-                    Add discount
+                    Discount
                 </p>
             </button>
             {showPopup && <AddNewDiscountPopup onClose={togglePopup} />}
