@@ -9,8 +9,8 @@ const ProtectedRoute = ({ children }: { children: any }) => {
   const auth = async () => {
     const session = await supabase.auth.getSession()
     if (!session.data.session) {
-      router.push('/login')
-    }
+      router.push('/dashboard/login')
+    } 
   }
 
   useEffect(() => {
