@@ -34,7 +34,7 @@ export default async function Component() {
             return (
               <div
                 key={index}
-                className='border border-slate-800 rounded-lg relative'
+                className='border border-slate-800 rounded-lg flex flex-col relative'
               >
                 <span
                   className={`${
@@ -46,7 +46,7 @@ export default async function Component() {
                   Discounted product!
                 </span>
                 <Link
-                  className='aspect-square overflow-hidden rounded-lg'
+                  className='aspect-square overflow-hidden rounded-t-lg'
                   href='#'
                 >
                   <Image
@@ -58,7 +58,7 @@ export default async function Component() {
                   />
                   <span className='sr-only'>View item</span>
                 </Link>
-                <div className='p-4'>
+                <div className='p-4 flex flex-col justify-between flex-grow'>
                   <Link
                     className='font-bold line-clamp-2 hover:underline underline-offset-2'
                     href='#'
@@ -87,6 +87,9 @@ export default async function Component() {
                   ) : (
                     <p className='font-semibold'>{product.price} €</p>
                   )}
+                  <button className='bg-blue-500 rounded py-2 px-4 hover:bg-blue-400 transition-all'>
+                    Add to cart
+                  </button>
                 </div>
               </div>
             )
