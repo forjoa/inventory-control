@@ -8,7 +8,7 @@ export default async function Component() {
   const { data } = await supabase
     .from('products')
     .select(
-      'product_id, name, description, price, cost, size, weight, stock, bar_code, created_at, discount_id, category_id'
+      'product_id, name, description, price, cost, size, weight, stock, bar_code, created_at, discount_id'
     )
   const products: Product[] = data as Product[]
 
