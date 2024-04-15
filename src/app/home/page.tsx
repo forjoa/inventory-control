@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { supabase } from '@/database/database_connection'
 import { Discount, Product } from '@/types/types'
+import placeholder from '@/assets/placeholder.svg'
 
 export default async function Component() {
   const { data } = await supabase
@@ -52,7 +53,7 @@ export default async function Component() {
                     alt={product.name}
                     className='object-cover aspect-image rounded-t-lg'
                     height='500'
-                    src='/placeholder.svg'
+                    src={placeholder}
                     width='500'
                   />
                   <span className='sr-only'>View item</span>
@@ -65,19 +66,27 @@ export default async function Component() {
                     {product.name}
                   </Link>
                   <span className='font-light'>{product.description}</span>
-                  <p className='font-semibold'>
-                    <span>
-                      {' '}
-                      {Math.floor(
-                        product.price -
-                          product.price * (discount.discount_percentage / 100)
-                      )}{' '}
-                      €
-                    </span>
-                    <br />
-                    <del className='text-slate-500'>{product.price} €</del>{' '}
-                    <span className='text-red-400 text-[13px]'>-{discount.discount_percentage}%{' '}</span>
-                  </p>
+                  {product.discount_id > 0 ? (
+                    <p className='font-semibold'>
+                      <span>
+                        {' '}
+                        {Math.floor(
+                          product.price -
+                            product.price * (discount.discount_percentage / 100)
+                        )}{' '}
+                        €
+                      </span>
+                      <br />
+                      <del className='text-slate-500'>
+                        {product.price} €
+                      </del>{' '}
+                      <span className='text-red-400 text-[13px]'>
+                        -{discount.discount_percentage}%{' '}
+                      </span>
+                    </p>
+                  ) : (
+                    <p className='font-semibold'>{product.price} €</p>
+                  )}
                 </div>
               </div>
             )
