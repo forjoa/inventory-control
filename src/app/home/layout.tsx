@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import './globals.css'
 import type { Metadata } from 'next'
+import CartButton from '@/components/CartButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,10 @@ export default function Layout({ children }: { children: any }) {
         <div className='flex flex-col min-h-[100dvh] max-w-[80dvw] mx-auto'>
           <header className='h-14 flex items-center px-4 md:px-6'>
             <div className='hidden md:flex items-center gap-4 lg:gap-6'>
-              <Link className='flex items-center gap-2 font-semibold' href='/home'>
+              <Link
+                className='flex items-center gap-2 font-semibold'
+                href='/home'
+              >
                 <Package2Icon className='h-6 w-6' />
                 <span className=''>Store</span>
               </Link>
@@ -44,7 +48,7 @@ export default function Layout({ children }: { children: any }) {
               >
                 Register
               </Link>
-              <button className='dark:text-black dark:bg-white text-sm rounded-md px-3 py-1'>Cart</button>
+              <CartButton />
             </div>
           </header>
           {children}
