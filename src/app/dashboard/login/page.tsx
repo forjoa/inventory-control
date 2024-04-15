@@ -18,7 +18,7 @@ const LoginPage = () => {
       if (error) {
         throw error
       }
-      router.push('/')
+      router.push('/dashboard')
     } catch (error) {
       console.error('Login error')
     }
