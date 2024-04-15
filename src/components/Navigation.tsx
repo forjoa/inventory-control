@@ -18,44 +18,44 @@ export default function Navigation() {
       <nav className='grid items-start px-4 text-sm font-medium'>
         <Link
           className={`${
-            router == '/'
+            router == '/dashboard'
               ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50'
               : 'text-gray-500 dark:text-gray-400'
           } flex items-center gap-3 rounded-lg px-3 py-2 transition-all dark:hover:text-gray-50`}
-          href='/'
+          href='/dashboard'
         >
           <HomeIcon className='h-4 w-4' />
           Home
         </Link>
         <Link
           className={`${
-            router == '/orders'
+            router == '/dashboard/orders'
               ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50'
               : 'text-gray-500 dark:text-gray-400'
           } flex items-center gap-3 rounded-lg px-3 py-2 transition-all dark:hover:text-gray-50`}
-          href='/orders'
+          href='/dashboard/orders'
         >
           <ShoppingCartIcon className='h-4 w-4' />
           Orders
         </Link>
         <Link
           className={`${
-            router == '/costumers'
+            router == '/dashboard/costumers'
               ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50'
               : 'text-gray-500 dark:text-gray-400'
           } flex items-center gap-3 rounded-lg px-3 py-2 transition-all dark:hover:text-gray-50`}
-          href='/costumers'
+          href='/dashboard/costumers'
         >
           <UsersIcon className='h-4 w-4' />
           Customers
         </Link>
         <Link
           className={`${
-            router == '/inventory'
+            router == '/dashboard/inventory'
               ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-50'
               : 'text-gray-500 dark:text-gray-400'
           } flex items-center gap-3 rounded-lg px-3 py-2 transition-all dark:hover:text-gray-50`}
-          href='/inventory'
+          href='/dashboard/inventory'
         >
           <PackageIcon className='h-4 w-4' />
           Inventory
