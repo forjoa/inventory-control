@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className='hidden border border-slate-800 bg-gray-100/40 lg:block dark:bg-gray-800/40 ml-5 my-5 rounded-lg'>
           <div className='flex h-full max-h-screen flex-col gap-2'>
             <div className='flex h-[60px] items-center border-b border-slate-800 px-6'>
-              <Link className='flex items-center gap-2 font-semibold' href='/'>
+              <Link className='flex items-center gap-2 font-semibold' href='/dashboard'>
                 <Package2Icon className='h-6 w-6' />
                 <span>Store</span>
               </Link>
