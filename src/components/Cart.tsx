@@ -10,7 +10,7 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
 
   return (
     <div className='absolute bg-black border border-gray-800 rounded text-white p-4 top-[60px] right-[130px] z-10 flex flex-col gap-2'>
-      <span onClick={handleToggle}><CloseIcon width={16}/></span>
+      <span onClick={handleToggle} className='w-full flex justify-end'><CloseIcon width={16}/></span>
       <p className='w-full flex'>Cart</p>
       <div>
         <ul className='flex flex-col gap-2'>
