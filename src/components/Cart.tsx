@@ -5,8 +5,6 @@ import { CartContext } from '../context/CartContext'
 const Cart = ({ handleToggle }: { handleToggle: any }) => {
   const { cart, removeFromCart } = useContext(CartContext)
 
-  console.log(cart)
-
   return (
     <div className='absolute bg-black border border-gray-800 rounded text-white p-4 top-[60px] right-[130px]'>
       <span onClick={handleToggle}>Cerrar</span>
