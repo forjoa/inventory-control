@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { supabase } from '@/database/database_connection'
 import { Discount, Product } from '@/types/types'
 import placeholder from '@/assets/placeholder.svg'
-import { CartProvider } from '@/components/CartContext'
+import AddToCartButton from '@/components/AddToCartButton'
 
 export default async function Component() {
   const { data } = await supabase
@@ -14,7 +14,6 @@ export default async function Component() {
   const products: Product[] = data as Product[]
 
   return (
-    <CartProvider>
       <main className='grid gap-6 p-4 lg:gap-12 lg:p-6'>
         <div className='grid gap-4'>
           <div className='grid gap-2'>
@@ -90,9 +89,7 @@ export default async function Component() {
                     ) : (
                       <p className='font-semibold'>{product.price} €</p>
                     )}
-                    <button className='bg-blue-500 rounded py-2 px-4 hover:bg-blue-400 transition-all'>
-                      Add to cart
-                    </button>
+                    <AddToCartButton product={product} />
                   </div>
                 </div>
               )
@@ -100,6 +97,5 @@ export default async function Component() {
           </div>
         </div>
       </main>
-    </CartProvider>
   )
 }
