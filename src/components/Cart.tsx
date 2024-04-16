@@ -38,7 +38,7 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
             )
           })}
         </ul>
-        <hr className='text-gray-800' />
+        <hr className='border-t border-gray-800' />
         <div className='flex justify-between'>
           <p>Total:</p>
           <p>{totalAmount} €</p>
