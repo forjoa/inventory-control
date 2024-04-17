@@ -11,7 +11,7 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
   const totalAmount = cart.reduce((total, product) => total + product.price, 0)
 
   return (
-    <div className='absolute bg-black border border-gray-800 rounded text-white p-4 top-[60px] right-[5%] z-10 flex flex-col gap-2 min-w-[200px]'>
+    <div className='absolute dark:bg-black border border-gray-800 rounded dark:text-white bg-white text-black p-4 top-[60px] right-[5%] z-10 flex flex-col gap-2 min-w-[200px]'>
       <span onClick={handleToggle} className='w-full flex justify-end'>
         <CloseIcon width={16} />
       </span>
@@ -48,7 +48,7 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
           </div>
           <div>
             <button
-              className='bg-blue-500 w-full py-1 rounded hover:bg-blue-400 transition-all'
+              className='bg-blue-500 w-full py-1 rounded hover:bg-blue-400 transition-all text-white'
               onClick={() => {
                 router.push('/home/cart')
                 handleToggle()

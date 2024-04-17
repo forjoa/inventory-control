@@ -13,13 +13,13 @@ export default function CartButton() {
   return (
     <>
       <button
-        className='dark:text-black dark:bg-white text-sm rounded-md px-3 py-1 flex justify-center items-center gap-1'
+        className='dark:text-black dark:bg-white text-white bg-black text-sm rounded-md px-3 py-1 flex justify-center items-center gap-1'
         onClick={handleToggle}
       >
         <AddProduct />
         <p className='hidden md:flex md:justify-center md:items-center md:h-full my-auto'>
           Cart{' '}
-          <span className='dark:text-white dark:bg-black flex justify-center items-center px-2 rounded-full aspect-square ml-1'>
+          <span className='dark:text-white dark:bg-black text-black bg-white flex justify-center items-center px-2 rounded-full aspect-square ml-1'>
             {cart.length}
           </span>
         </p>

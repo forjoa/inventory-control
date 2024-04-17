@@ -4,7 +4,7 @@ import CartButton from './CartButton'
 
 const Header = () => {
   return (
-    <header className='h-14 flex items-center px-4 md:px-6 sticky top-0 dark:bg-black bg-white z-10'>
+    <header className='h-14 flex items-center px-4 md:px-6 sticky top-0 dark:bg-black backdrop-blur-xl z-10'>
       <div className='hidden md:flex items-center gap-4 lg:gap-6'>
         <Link className='flex items-center gap-2 font-semibold' href='/home'>
           <Package2Icon className='h-6 w-6' />

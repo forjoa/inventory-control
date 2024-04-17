@@ -8,7 +8,7 @@ const AddToCartButton = ({ product }: { product: Product }) => {
 
   return (
     <button
-      className='bg-blue-500 rounded py-2 px-4 hover:bg-blue-400 transition-all'
+      className='bg-blue-500 rounded py-2 px-4 hover:bg-blue-400 transition-all text-white'
       onClick={() => addToCart(product)}
     >
       Add to cart
