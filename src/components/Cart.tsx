@@ -39,9 +39,14 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
           })}
         </ul>
         <hr className='border-t border-gray-800' />
-        <div className='flex justify-between'>
-          <p>Total:</p>
-          <p>{totalAmount} €</p>
+        <div className='flex flex-col gap-2'>
+          <div className='flex justify-between'>
+            <p>Total:</p>
+            <p>{totalAmount} €</p>
+          </div>
+          <div>
+            <button className='bg-blue-500 w-full py-1 rounded hover:bg-blue-400 transition-all'>Pay</button>
+          </div>
         </div>
       </div>
     </div>
