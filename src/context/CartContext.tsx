@@ -1,6 +1,6 @@
 'use client'
 import { CartContextType, Product } from '@/types/types'
-import { createContext, useState } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 export const CartContext = createContext<CartContextType>({
   cart: [],
@@ -9,12 +9,19 @@ export const CartContext = createContext<CartContextType>({
 })
 
 export const CartProvider = ({ children }: { children: any }) => {
-  const [cart, setCart] = useState<Product[]>([])
+  const [cart, setCart] = useState<Product[]>(() => {
+    const savedCart = localStorage.getItem('cart')
+    return savedCart ? JSON.parse(savedCart) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
 
   const addToCart = (product: Product) => {
     setCart([...cart, product])
   }
-  
+
   const removeFromCart = (itemId: number) => {
     setCart(cart.filter((product) => product.product_id != itemId))
   }
