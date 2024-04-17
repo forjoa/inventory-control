@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: any }) {
       <html lang='en'>
         <body className={inter.className}>
           <div className='flex flex-col min-h-[100dvh] max-w-[80dvw] mx-auto'>
-            <header className='h-14 flex items-center px-4 md:px-6'>
+            <header className='h-14 flex items-center px-4 md:px-6 sticky top-0 dark:bg-black bg-white z-10'>
               <div className='hidden md:flex items-center gap-4 lg:gap-6'>
                 <Link
                   className='flex items-center gap-2 font-semibold'
