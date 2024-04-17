@@ -2,9 +2,11 @@
 import { useContext } from 'react'
 import { CartContext } from '@/context/CartContext'
 import { CloseIcon } from '@/assets/icons'
+import { useRouter } from 'next/navigation'
 
 const Cart = ({ handleToggle }: { handleToggle: any }) => {
   const { cart, removeFromCart } = useContext(CartContext)
+  const router = useRouter()
 
   const totalAmount = cart.reduce((total, product) => total + product.price, 0)
 
@@ -45,7 +47,12 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
             <p>{totalAmount} €</p>
           </div>
           <div>
-            <button className='bg-blue-500 w-full py-1 rounded hover:bg-blue-400 transition-all'>Pay</button>
+            <button
+              className='bg-blue-500 w-full py-1 rounded hover:bg-blue-400 transition-all'
+              onClick={() => router.push('/home/cart')}
+            >
+              Pay
+            </button>
           </div>
         </div>
       </div>
