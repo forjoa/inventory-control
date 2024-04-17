@@ -44,7 +44,7 @@ export default async function Component() {
                 <span
                   className={`${
                     product.discount_id > 0
-                      ? 'absolute top-[-10px] right-[-10px] bg-red-500 px-1 rounded'
+                      ? 'absolute top-[-10px] right-[-10px] bg-red-500 px-1 rounded text-white'
                       : 'hidden'
                   }`}
                 >
