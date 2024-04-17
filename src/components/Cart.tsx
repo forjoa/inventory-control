@@ -49,9 +49,12 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
           <div>
             <button
               className='bg-blue-500 w-full py-1 rounded hover:bg-blue-400 transition-all'
-              onClick={() => router.push('/home/cart')}
+              onClick={() => {
+                router.push('/home/cart')
+                handleToggle()
+              }}
             >
-              Pay
+              Go to pay
             </button>
           </div>
         </div>
