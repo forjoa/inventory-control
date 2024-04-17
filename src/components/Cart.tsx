@@ -1,6 +1,6 @@
 'use client'
-import { useContext, useState } from 'react'
-import { CartContext } from '../context/CartContext'
+import { useContext } from 'react'
+import { CartContext } from '@/context/CartContext'
 import { CloseIcon } from '@/assets/icons'
 
 const Cart = ({ handleToggle }: { handleToggle: any }) => {
@@ -9,7 +9,7 @@ const Cart = ({ handleToggle }: { handleToggle: any }) => {
   const totalAmount = cart.reduce((total, product) => total + product.price, 0)
 
   return (
-    <div className='absolute bg-black border border-gray-800 rounded text-white p-4 top-[60px] right-[130px] z-10 flex flex-col gap-2'>
+    <div className='absolute bg-black border border-gray-800 rounded text-white p-4 top-[60px] right-[130px] z-10 flex flex-col gap-2 min-w-[200px]'>
       <span onClick={handleToggle} className='w-full flex justify-end'>
         <CloseIcon width={16} />
       </span>
