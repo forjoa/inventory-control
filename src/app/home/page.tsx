@@ -63,7 +63,7 @@ export default async function Component() {
                   />
                   <span className='sr-only'>View item</span>
                 </Link>
-                <div className='p-4 flex flex-col justify-between flex-grow'>
+                <div className='p-4 flex flex-col justify-between flex-grow gap-1'>
                   <Link
                     className='font-bold line-clamp-2 hover:underline underline-offset-2'
                     href='#'
