@@ -1,9 +1,18 @@
+'use client'
 import { Package2Icon } from '@/assets/icons'
 import Link from 'next/link'
 import CartButton from './CartButton'
 import LoginButton from './LoginButton'
+import { useState } from 'react'
+import RegisterButton from './RegisterButton'
 
 const Header = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState<boolean>(false)
+  const [isRegisterOpen, setIsRegisterOpen] = useState<boolean>(false)
+
+  const handleLoginToggle = () => setIsLoginOpen(!isLoginOpen)
+  const handleRegisterToggle = () => setIsRegisterOpen(!isRegisterOpen)
+
   return (
     <header className='h-14 flex items-center px-4 md:px-6 sticky top-0 dark:bg-black backdrop-blur-xl z-10'>
       <div className='hidden md:flex items-center gap-4 lg:gap-6'>
@@ -22,13 +31,11 @@ const Header = () => {
         </form>
       </div>
       <div className='flex ml-auto lg:ml-0 items-center gap-4 lg:gap-6'>
-        <LoginButton />
-        <Link
-          className='hidden md:flex text-sm font-medium hover:underline underline-offset-4'
-          href='#'
-        >
-          Register
-        </Link>
+        <LoginButton toggleLogin={handleLoginToggle} isOpen={isLoginOpen} />
+        <RegisterButton
+          toggleRegister={handleRegisterToggle}
+          isOpen={isRegisterOpen}
+        />
         <CartButton />
       </div>
     </header>
