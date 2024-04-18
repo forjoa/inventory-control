@@ -1,6 +1,7 @@
 import { Package2Icon } from '@/assets/icons'
 import Link from 'next/link'
 import CartButton from './CartButton'
+import LoginButton from './LoginButton'
 
 const Header = () => {
   return (
@@ -21,12 +22,7 @@ const Header = () => {
         </form>
       </div>
       <div className='flex ml-auto lg:ml-0 items-center gap-4 lg:gap-6'>
-        <Link
-          className='hidden md:flex text-sm font-medium hover:underline underline-offset-4'
-          href='#'
-        >
-          Login
-        </Link>
+        <LoginButton />
         <Link
           className='hidden md:flex text-sm font-medium hover:underline underline-offset-4'
           href='#'
